@@ -1,0 +1,21 @@
+version: '3'
+services:
+    # Frontend Service
+    frontend:
+        build:
+            context: .
+            dockerfile: ./DockerFile
+        container_name: "frontend-izzilearn"
+        working_dir: /usr/src/app/frontend
+        volumes: 
+            - ./frontend/:/usr/src/app/frontend 
+        ports: 
+            - '4200:4200' 
+        command: > 
+            bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+        networks:
+            - private
+# Docker Networks
+networks:
+    private:
+        driver: bridge

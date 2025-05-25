@@ -1,0 +1,21 @@
+@media (max-width: 575px){
+  .navbar-brand{
+    color: white;
+  }
+  .nav-link{
+    color: white;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px){
+  .body{
+      background-color: #AE9E9E;
+  }
+}
+
+@media (max-width: 575px){
+  .body{
+      background-color: #AE9E9E;
+  }
+
+
+}

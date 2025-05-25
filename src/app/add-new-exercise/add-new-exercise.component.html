@@ -1,0 +1,44 @@
+<section class="section">
+    <div class="container my-3" style="background-color: white;margin-bottom: 100px;">
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto"> 
+                <div class="p-3">
+                 <div class="input-group mt-3">
+                  <input type="file" #fileInput (change)="onFileSelected(fileInput)" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                  <button class="btn btn-outline-secondary" type="button" (click)="onUpload()" id="inputGroupFileAddon04">Envoyer</button>
+                 </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 mx-auto"> 
+                <div *ngIf="message" class="mb-3">
+                  {{ message }}
+                </div>
+                 <div *ngIf="reponse" class="mb-3">
+                   <div #responseContainer  [innerHtml]="reponse">
+                   </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+     <div class="container mb-3" *ngIf='reponse==""'>
+            <div class="col-12 col-md-8 mx-auto">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Ajouter votre image qui contient un exercice   
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Faite vous aider par une solution guidée de notre puissant aoutils </h5>
+                        <p class="card-text">comment ça marche ? </p>
+                        <p class="card-text">C'est simple ajouter une image qui contient ou plusieurs exercices et cliquer sur le button envoyer</p>
+                        <p class="card-text">c'est simple et rapide </p>
+                        
+                    </div>
+                    <div class="card-footer text-muted">
+                        let's go 
+                    </div>
+                </div>
+            </div>
+         </div>
+</section>

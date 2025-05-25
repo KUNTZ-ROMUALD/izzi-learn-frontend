@@ -1,0 +1,30 @@
+<section class="m-3">
+    <div class="container">
+        <div class="row">
+        <div  class="col-12 col-md-8 mx-auto" #responseContainer>
+            <div class="card border-dark mb-3" style="max-width: 100%;"  *ngFor="let epreuve of epreuves">
+               <div class="card-header">{{epreuve.subject}}</div>
+                  <div class="card-body text-dark">
+                    <div [innerHTML]="epreuve.content" > </div>
+                  </div>
+                <div class="card-footer bg-transparent border-success"><button (click)="getExercise(epreuve)" class="btn btn-outline-secondary">Voir la solution{{epreuve.id}}</button></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+   <div class="container" *ngIf="epreuves && epreuves.length === 0">
+    <div class="card text-center">
+        <div class="card-header">
+            Liste des epreuves 
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Tous vos epreuves avec aide de pour la correction ou avec la coorection</h5>
+            <p class="card-text">Si vous vous voyez ce contenu ce que vous n'avez pas de epreuves dans votre espace</p>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+  </div>
+</section>
